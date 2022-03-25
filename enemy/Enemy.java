@@ -2,6 +2,9 @@ package enemy;
 
 import java.util.Objects;
 
+/*
+ * Class created to simulate an enemy of a game project
+ * */
 public class Enemy {
 
 	int life;

@@ -5,6 +5,10 @@ import java.util.Objects;
 
 import enemy.Enemy;
 
+/*
+ * Implementation of the ObjectPool pattern,
+ * It stores objects of the Enemy type
+ * */
 public class EnemyPool {
 	
 	ArrayList<Enemy> pool = new ArrayList<Enemy>();
@@ -17,7 +21,9 @@ public class EnemyPool {
 		
 	}
 	
-	
+	/*
+	 * Method that initializes the pool 
+	 * */
 	private void creatPool(int poolSize) {
 		
 		for(int i = 0; i < poolSize; i++) {
@@ -26,7 +32,9 @@ public class EnemyPool {
 		
 	}
 	
-	
+	/*
+	 * Method that delivers pool elements when called 
+	 * */
 	public Enemy acquire() {
 		
 		if(!pool.isEmpty()) {
@@ -36,7 +44,9 @@ public class EnemyPool {
 		return null;
 	}
 	
-	
+	/*
+	 * Method that return elements to the pool
+	 * */
 	public void releasy(Enemy returned) {
 		if(pool.size() < max) {
 			pool.add(returned);

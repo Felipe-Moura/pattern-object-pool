@@ -7,6 +7,9 @@ import java.util.Random;
 import enemy.Enemy;
 import objectpool.EnemyPool;
 
+/*
+ * Class created to simulate the creation of a screen from a game project
+ * */
 public class Screen {
 	
 	int numberOfEnemies;
@@ -16,21 +19,27 @@ public class Screen {
 		this.numberOfEnemies = numberOfEnemies;
 	}
 	
-	
+	/*
+	 * Method that pick the elements of the pool
+	 * */
 	public void pullEnemies(EnemyPool pool) {
 		for(int i = 0; i < numberOfEnemies; i++) {
 			screenEnemies.add(pool.acquire());
 		}
 	}
 	
-	
+	/*
+	 * Method that returns the elements to the pool
+	 * */
 	public void giveBackEnemies(EnemyPool pool) {
 		for(int i = 0; i < numberOfEnemies; i++) {
 			pool.releasy(screenEnemies.remove(0));
 		}
 	}
 	
-	
+	/*
+	 * Method that randomizes the position of the enemies in the screen
+	 * */
 	public void setEnemiesPosition() {
 		Random rnd = new Random();
 		
@@ -41,7 +50,9 @@ public class Screen {
 		
 	}
 	
-	
+	/*
+	 * Method that sets the positions of the enemies to (0, 0)
+	 * */
 	public void resetEnemiesPosition() {
 		Random rnd = new Random();
 		
@@ -52,7 +63,9 @@ public class Screen {
 		
 	}
 	
-	
+	/*
+	 * Method that show the enemies on the screen
+	 * */
 	public void display() {
 		for(int i = 0; i < numberOfEnemies; i++) {
 			System.out.println("Enemy "+ i + " position: x = " + screenEnemies.get(i).getPositionX() + " y = " + screenEnemies.get(i).getPositionY());

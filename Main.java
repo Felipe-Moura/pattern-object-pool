@@ -8,8 +8,8 @@ public class Main {
 	public static void main(String[] args) {
 		
 		/*
-		 * Criar um ObjectPool que armazene inimigos
-		 * Criar telas que peguem os inimigos do pool e devolva ao final da tela
+		 * The program asks the user to choose between to screens
+		 * and displays the chosen one 
 		 * */
 		
 		Scanner input = new Scanner(System.in);
